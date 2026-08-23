@@ -1,0 +1,23 @@
+{
+  "name": "manual-reframe",
+  "version": "1.0.0",
+  "description": "Página de vendas do ebook **Manual Reframe: para entender qualquer pintura**, do canal [ReFrame](https://www.youtube.com/channel/UC-3fWnVNx4a_gX6s2c97kBA).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bymatheusrocha/manual-reframe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bymatheusrocha/manual-reframe/issues"
+  },
+  "homepage": "https://github.com/bymatheusrocha/manual-reframe#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
