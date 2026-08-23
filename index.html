@@ -872,5 +872,9 @@ window.addEventListener('scroll', atualiza, {passive:true});
 window.addEventListener('resize', atualiza);
 atualiza();
 </script>
+<script type="module">
+  import { inject } from '@vercel/analytics';
+  inject();
+</script>
 </body>
 </html>
