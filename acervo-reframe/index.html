@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100E0B">
+<title>Acervo Reframe: 50 obras decifradas</title>
+<link rel="canonical" href="https://canalreframe.com.br/acervo-reframe/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canalreframe.com.br/acervo-reframe/">
+<meta property="og:title" content="Acervo Reframe: 50 obras decifradas">
+<meta property="og:description" content="50 pinturas decifradas sem palavras difíceis: a história real por trás de cada tela e os detalhes que quase ninguém percebe.">
+<meta property="og:image" content="https://canalreframe.com.br/acervo-reframe/img/pag-livro3d-891.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="description" content="50 pinturas decifradas sem palavras difíceis: a história real por trás de cada tela e os detalhes que quase ninguém percebe, apontados um por um.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=IBM+Plex+Mono&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens da identidade ReFrame (rf-*) ---------- */
+:root{
+  --verniz:#100E0B; --sepia:#1E1913; --linha:#3A2F22; --linho:#EEE7D9; --marfim:#ECE5D8;
+  --patina:#A99E8C; --ouro:#E8B64B; --ouro-esc:#7C5B12; --verm:#D2492F; --tinta:#1C1813;
+  --tinta-2:#4A3F33; --tinta-3:#6B5F50;
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --texto:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --rotulo:"IBM Plex Mono",Consolas,ui-monospace,monospace;
+  --mao:"Caveat","Segoe Print",cursive;
+  --lateral:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--verniz);color:var(--marfim);font-family:var(--texto);
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+p{margin:0;text-wrap:pretty}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;text-wrap:balance}
+.wrap{width:min(1100px,100% - 2*var(--lateral));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+
+.rotulo{font-family:var(--rotulo);font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro);margin:0}
+.it{font-style:italic;color:var(--ouro)}
+.titulo{font-size:clamp(64px,8.3vw,120px);line-height:.98;letter-spacing:-.03em;margin:14px 0 0}
+.titulo .it{display:block;line-height:1}
+.apoio{font-size:18px;color:var(--patina)}
+
+/* cantoneiras: o gesto do enquadramento (4 cantos em ouro velho) */
+.cantos{position:absolute;pointer-events:none}
+.cantos i{position:absolute;width:var(--c,46px);height:var(--c,46px);border:0 solid var(--ouro)}
+.cantos i:nth-child(1){top:0;left:0;border-top-width:var(--e,4px);border-left-width:var(--e,4px)}
+.cantos i:nth-child(2){top:0;right:0;border-top-width:var(--e,4px);border-right-width:var(--e,4px)}
+.cantos i:nth-child(3){bottom:0;left:0;border-bottom-width:var(--e,4px);border-left-width:var(--e,4px)}
+.cantos i:nth-child(4){bottom:0;right:0;border-bottom-width:var(--e,4px);border-right-width:var(--e,4px)}
+
+/* botoes */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:18px 32px;
+  background:var(--ouro);color:var(--tinta);font-family:var(--texto);font-weight:700;font-size:15px;
+  letter-spacing:.11em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;
+  transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.escuro{background:var(--tinta);color:var(--ouro)}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:var(--ouro)}
+
+/* ---------- 1. cabecalho + hero ---------- */
+.topo{padding-top:36px}
+.marca{display:inline-block;padding:6px 0;font-family:var(--display);font-size:34px;line-height:1;letter-spacing:-.02em;color:var(--marfim);text-decoration:none}
+.marca em{color:var(--ouro)}
+.hero{display:grid;grid-template-columns:1fr 424px;gap:80px;align-items:center;padding:90px 0 70px}
+.hero h1{font-size:clamp(40px,4.75vw,68px);line-height:1.04;letter-spacing:-.015em;margin:26px 0 26px}
+.hero h1 .it{display:block}
+.hero .sub{font-size:19px;color:var(--patina);max-width:520px}
+.hero .acao{margin-top:30px}
+.preco-hero{margin-top:30px}
+.preco-hero .fmt{font-family:var(--rotulo);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--patina);margin-bottom:4px}
+.preco-hero .val{font-family:var(--display);font-size:64px;line-height:1.02;color:var(--ouro)}
+.preco-hero .par{font-size:15px;color:var(--patina)}
+.livro{position:relative;width:360px;aspect-ratio:891/1327;justify-self:center}
+.livro img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 40px 50px rgba(0,0,0,.75))}
+.livro .capa{position:absolute;inset:20px 24px 40px 44px;box-shadow:0 40px 80px rgba(0,0,0,.8);border:1px solid rgba(0,0,0,.5)}
+.livro .capa img{width:100%;height:100%;object-fit:cover}
+.livro .capa::after{content:"";position:absolute;inset:0 auto 0 0;width:16px;
+  background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(255,255,255,.08) 60%,transparent)}
+.livro .cantos{inset:0 0 20px 20px}
+
+/* ---------- 2. faixa ---------- */
+.faixa{overflow:hidden;padding:60px 0 64px}
+.faixa-ouro{background:var(--ouro);margin-inline:-60px;transform:rotate(-1.6deg);padding:14px 0}
+.trilho{display:flex;width:max-content;gap:26px;align-items:center;animation:corre 70s linear infinite}
+.trilho span{font-family:var(--display);font-size:40px;line-height:1.05;color:var(--tinta);white-space:nowrap}
+.trilho span:nth-child(4n+3){font-style:italic}
+.trilho b{font-family:var(--display);font-weight:400;font-size:40px;color:var(--ouro-esc)}
+@keyframes corre{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.trilho{animation:none}}
+
+/* ---------- 3. experimente ---------- */
+.experimente{padding:120px 0 130px}
+.cab2{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:end;margin-bottom:56px}
+.cab2 .lado{padding-bottom:14px}
+.cab2>*,.cab3>*,.cab4>*{min-width:0}
+.abas{display:flex;flex-direction:column;margin-top:26px}
+.abas button{display:flex;align-items:baseline;gap:16px;padding:13px 0;background:none;border:0;
+  border-bottom:1px solid var(--linha);cursor:pointer;text-align:left;color:var(--patina);
+  font-family:var(--display);font-size:26px;line-height:1}
+.abas button i{font-size:22px}
+.abas button[aria-selected="true"]{color:var(--marfim);border-bottom:2px solid var(--ouro)}
+.abas button[aria-selected="true"] i{color:var(--ouro)}
+.abas button:hover{color:var(--marfim)}
+
+.palco{position:relative;padding-right:320px}
+/* moldura de tamanho FIXO (formato dos Embaixadores); cada obra se encaixa dentro
+   sem mudar a altura da secao. --ar = largura/altura da obra atual */
+.moldura-fixa{position:relative;aspect-ratio:1.0148;display:grid;place-items:center;background:#0B0A08;
+  box-shadow:0 30px 70px rgba(0,0,0,.6);overflow:hidden}
+.tela{position:relative;width:min(100%,calc(var(--ar,1.0148) / 1.0148 * 100%));aspect-ratio:var(--ar,1.0148)}
+.tela img{width:100%;height:100%;object-fit:cover}
+.tela::before{content:"";position:absolute;inset:0;background:rgba(16,14,11,.2);pointer-events:none;transition:opacity .2s}
+.ver-original{position:absolute;top:20px;left:20px;z-index:3;padding:9px 14px;background:rgba(16,14,11,.8);
+  border:1px solid var(--linha);color:var(--marfim);font-weight:600;font-size:14px;cursor:pointer;min-height:40px}
+.mira{position:absolute;pointer-events:none;transition:all .35s ease;z-index:1}
+.mira.cantos{--c:40px;--e:4px}
+.pt{position:absolute;z-index:2;width:46px;height:46px;transform:translate(-50%,-50%);border:0;background:none;
+  padding:0;cursor:pointer;display:grid;place-items:center}
+.pt b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;
+  color:var(--marfim);background:rgba(16,14,11,.85);border:1.5px solid var(--ouro);transition:transform .15s}
+.pt:hover b{transform:scale(1.12)}
+.pt[aria-pressed="true"] b{width:40px;height:40px;background:var(--verm);border:2px solid var(--marfim)}
+.pt .halo{position:absolute;inset:6px;border-radius:50%;border:1px solid rgba(232,182,75,.6);animation:pulsa 2.6s ease-out infinite}
+@keyframes pulsa{0%{opacity:.9;transform:scale(.9)}70%{opacity:0;transform:scale(1.6)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.pt .halo{animation:none}.mira{transition:none}}
+.tela.limpa::before,.tela.limpa .pt,.tela.limpa .mira{opacity:0;pointer-events:none}
+.ficha-obra{font-family:var(--rotulo);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--patina);margin-top:14px}
+
+.placa{position:absolute;right:0;top:70px;width:400px;z-index:4;background:var(--linho);color:var(--tinta);
+  padding:28px;box-shadow:0 30px 70px rgba(0,0,0,.7)}
+.placa .zoom{width:100%;aspect-ratio:344/358;background:#000 no-repeat;transition:background-position .35s ease,background-size .35s ease}
+.placa .linha-rot{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px}
+.placa .cont{font-family:var(--rotulo);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro-esc)}
+.placa .trecho{font-family:var(--display);font-style:italic;font-size:18px;color:var(--ouro-esc)}
+.placa h3{font-size:38px;line-height:1.05;margin:10px 0 12px;color:var(--tinta)}
+.placa .corpo{min-height:var(--corpo,auto)}
+.placa p{color:var(--tinta-2);font-size:17px}
+.placa .nav{display:flex;align-items:center;gap:8px;margin-top:18px}
+.placa .nav button{width:44px;height:44px;border:1px solid var(--tinta);background:none;color:var(--tinta);font-size:22px;cursor:pointer}
+.placa .nav button:hover{background:var(--tinta);color:var(--linho)}
+.placa .nav span{font-size:14px;color:var(--tinta-3);margin-left:8px}
+
+/* ---------- 4. por dentro (linho) ---------- */
+.dentro{background:var(--linho);color:var(--tinta);padding:130px 0 120px}
+.dentro .rotulo{color:var(--ouro-esc)}
+.dentro .titulo{color:var(--tinta);font-size:clamp(52px,7.8vw,112px)}
+.dentro .titulo .it{color:var(--ouro-esc)}
+.dentro .apoio{color:var(--tinta-2)}
+.cab3{display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:end}
+.mesa{display:flex;justify-content:center;padding:84px 0 20px}
+.prova{position:relative;flex:0 0 26%;margin-left:-1.4%;
+  transform:translateY(var(--y)) rotate(var(--r));transition:transform .25s}
+.prova:first-child{margin-left:0}
+@media (hover:hover){.prova:hover{transform:translateY(calc(var(--y) - 12px)) rotate(0deg) scale(1.03);z-index:2}}
+.prova img{width:100%;aspect-ratio:1000/1416;object-fit:cover;box-shadow:0 24px 40px rgba(42,31,18,.35);border:1px solid rgba(0,0,0,.25)}
+.prova .num{position:absolute;top:-56px;left:8px;font-family:var(--mao);font-size:52px;line-height:1;color:var(--verm);transform:rotate(-6deg)}
+.nota{font-family:var(--mao);font-size:34px;line-height:1.1;color:var(--verm);text-align:right;transform:rotate(-2deg);margin:26px 2% 0 0}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px;padding:0;list-style:none}
+.passos li{border-top:1px solid rgba(28,24,19,.25);padding-top:16px}
+.passos h3{font-size:30px;line-height:1;color:var(--tinta);margin-bottom:8px}
+.passos h3 i{font-family:var(--mao);font-style:normal;color:var(--verm);margin-right:8px}
+.passos p{font-size:16px;color:var(--tinta-2)}
+
+/* ---------- 5. acervo ---------- */
+.acervo{padding:130px 0}
+.cab4{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:end}
+.acervo .titulo{font-size:clamp(72px,10.4vw,150px)}
+.acervo .titulo .it{display:inline}
+.parede-box{position:relative}
+.parede{overflow:hidden;padding:70px 0 70px;cursor:grab;touch-action:pan-y;user-select:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.parede::-webkit-scrollbar{display:none}
+.parede.arrastando{cursor:grabbing}
+.parede-trilho{display:flex;align-items:center;gap:44px;width:max-content;padding:0 44px 0 0;will-change:transform}
+.quadro{transition:transform .3s}
+.quadro img{-webkit-user-drag:none;user-select:none}
+.quadro figcaption b{font-weight:400}
+.quadro figcaption span{display:block;font-family:var(--display);font-size:17px;letter-spacing:0;line-height:1.15;color:var(--marfim);margin-top:4px;max-width:calc(var(--h) * var(--a) * var(--k,1px));text-wrap:balance;opacity:.75;transition:opacity .3s}
+@media (hover:hover){.quadro:hover{transform:translateY(-8px)}.quadro:nth-child(even):hover{transform:translateY(18px)}.quadro:hover figcaption span{opacity:1}}
+.parede-seta{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border-radius:50%;
+  border:1px solid var(--linha);background:rgba(16,14,11,.85);color:var(--ouro);font-size:26px;line-height:1;cursor:pointer}
+.parede-seta.ant{left:max(12px,(100% - 1100px)/2 - 60px)}.parede-seta.prox{right:max(12px,(100% - 1100px)/2 - 60px)}
+.parede-seta:hover{background:var(--ouro);color:var(--tinta)}
+.quadro{margin:0}
+.quadro:nth-child(even){transform:translateY(26px)}
+.quadro .moldura{padding:6px;background:var(--ouro-esc);box-shadow:0 14px 24px rgba(0,0,0,.8)}
+.quadro img{height:calc(var(--h) * var(--k,1px));width:auto;max-width:none}
+.quadro figcaption{font-family:var(--rotulo);font-size:13px;letter-spacing:.15em;color:var(--patina);margin-top:14px}
+.lista{columns:3;column-gap:40px;margin:0;padding:0;list-style:none;counter-reset:o}
+.lista li{break-inside:avoid;display:grid;grid-template-columns:30px 1fr;gap:4px 12px;padding:10px 0;border-bottom:1px solid var(--linha)}
+.lista li::before{counter-increment:o;content:counter(o,decimal-leading-zero);font-family:var(--rotulo);font-size:13px;color:var(--ouro);line-height:1.9;grid-row:span 2}
+.lista .o{font-family:var(--display);font-size:21px;line-height:1.15;color:var(--marfim)}
+.lista .a{font-size:14px;color:var(--patina)}
+.ver-todas{display:none;width:100%;margin-top:22px;min-height:56px;padding:14px;background:none;border:1px solid var(--ouro);
+  color:var(--ouro);font-family:var(--display);font-size:22px;cursor:pointer}
+
+/* ---------- 6. duvidas ---------- */
+.duvidas{padding:120px 0;border-top:1px solid var(--linha)}
+.duvidas .wrap{display:grid;grid-template-columns:360px 1fr;gap:80px}
+.duvidas .titulo{font-size:clamp(64px,7.2vw,104px)}
+.perguntas{border-top:1px solid var(--linha)}
+.perguntas details{border-bottom:1px solid var(--linha)}
+.perguntas summary{list-style:none;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:26px 0;cursor:pointer}
+.perguntas summary::-webkit-details-marker{display:none}
+.perguntas summary i{font-family:var(--display);font-size:22px;color:var(--ouro)}
+.perguntas summary span{font-family:var(--display);font-size:30px;line-height:1.1;color:var(--marfim)}
+.perguntas summary::after{content:"+";font-family:var(--rotulo);font-size:24px;color:var(--ouro)}
+.perguntas details[open] summary::after{content:"\2212"}
+.perguntas p{color:var(--patina);padding:0 40px 26px 42px}
+
+/* ---------- 7. oferta ---------- */
+.oferta{position:relative;overflow:hidden;min-height:960px;display:flex;align-items:center}
+.oferta .fundo{position:absolute;max-width:none;inset:-120px 0 auto 0;width:100%;height:calc(100% + 240px);object-fit:cover;object-position:50% 30%}
+.oferta .veu{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,14,11,.95),rgba(16,14,11,.7) 50%,rgba(16,14,11,.25)),
+  linear-gradient(180deg,var(--verniz),transparent 19%)}
+.oferta .wrap{position:relative;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:center;padding:150px 0 140px}
+.oferta h2{font-size:clamp(50px,5.85vw,84px);line-height:1;letter-spacing:-.03em;color:var(--marfim)}
+.oferta h2 .it{display:block}
+.oferta .chamada p{margin-top:28px;font-size:18px;color:var(--marfim);max-width:520px}
+.leilao{background:var(--linho);color:var(--tinta);padding:40px 40px 34px;box-shadow:0 40px 90px rgba(0,0,0,.85)}
+.leilao .rot{font-family:var(--rotulo);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro-esc)}
+.leilao dl{margin:22px 0 24px}
+.leilao dl div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid rgba(28,24,19,.15)}
+.leilao dt{font-size:15px;color:var(--tinta-3)}
+.leilao dd{margin:0;font-family:var(--display);font-size:21px;line-height:1.1;text-align:right}
+.leilao .pg{font-family:var(--rotulo);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-3)}
+.leilao .val{font-family:var(--display);font-size:clamp(76px,7.2vw,104px);line-height:1.05;letter-spacing:-.03em}
+.leilao .par{font-size:14px;color:var(--tinta-2)}
+.leilao .btn{width:100%;margin:26px 0 18px}
+.garantia{display:flex;gap:10px;align-items:flex-start;justify-content:center;font-size:14px;color:var(--tinta-2)}
+.garantia svg{flex:0 0 18px;margin-top:1px}
+.ficha-fundo{position:absolute;left:max(var(--lateral),(100% - 1100px)/2);bottom:40px;font-family:var(--rotulo);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--patina)}
+
+/* ---------- 8. rodape ---------- */
+.rodape{padding:90px 0 60px;border-top:1px solid var(--linha)}
+.rodape .marca{display:block;font-size:clamp(96px,15.3vw,220px);line-height:.85;letter-spacing:-.03em}
+.rodape .fim{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:40px;flex-wrap:wrap}
+.rodape .lema{font-family:var(--display);font-style:italic;font-size:22px;color:var(--patina)}
+.rodape small{font-size:14px;color:var(--patina)}
+
+/* ---------- barra fixa ---------- */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(16,14,11,.94);backdrop-filter:blur(10px);
+  border-top:1px solid var(--linha);padding:12px 0;transform:translateY(110%);transition:transform .3s}
+.barra.ver{transform:none}
+.barra .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.barra .txt{font-family:var(--rotulo);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--patina)}
+.barra .val{font-family:var(--display);font-size:28px;line-height:1;color:var(--ouro);display:none}
+.barra .par{font-size:13px;color:var(--patina);display:none}
+.barra .btn{min-height:48px;padding:13px 24px;font-size:14px}
+
+
+/* ============ TABLET (700 a 1099) ============ */
+@media (max-width:1099px){
+  .hero{grid-template-columns:1fr 340px;gap:48px}
+  .livro{width:300px}
+  .cab2,.cab3,.cab4{grid-template-columns:1fr}
+  .cab2 .lado,.cab3 .apoio,.cab4 .apoio{max-width:560px}
+  .palco{padding-right:0}
+  .placa{position:relative;top:auto;right:auto;width:auto;margin:-12px 0 0 auto;max-width:560px}
+  .placa{display:grid;grid-template-columns:220px 1fr;gap:0 24px}
+  .placa .zoom{grid-row:span 5}
+  .ficha-obra{display:none}
+  .placa .linha-rot{margin-top:0}
+  .passos{grid-template-columns:repeat(2,1fr)}
+  .lista{columns:2}
+  .duvidas .wrap{grid-template-columns:1fr;gap:30px}
+  .oferta .wrap{grid-template-columns:1fr 400px;gap:40px}
+}
+
+/* ============ CELULAR (ate 699) ============ */
+@media (max-width:699px){
+  body{font-size:17px}
+  .rotulo{font-size:13px;letter-spacing:2.6px}
+  .apoio{font-size:17px}
+  .topo{padding-top:22px}
+  .marca{font-size:28px}
+  /* hero: titulo, livro, texto, botao, preco */
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:34px 0 20px}
+  .hero > div:first-child{display:contents}
+  .hero .rotulo{order:1}
+  .hero h1{order:2;font-size:clamp(34px,10.3vw,44px);margin:14px 0 26px}
+  .livro{order:3;width:200px;justify-self:auto;align-self:center;margin:0 0 30px}
+  .livro .capa{inset:10px 14px 19px 14px}
+  .livro .cantos{inset:0;--c:24px;--e:3px}
+  .hero .sub{order:4;font-size:17px}
+  .hero .acao{order:5;margin-top:26px}
+  .hero .acao .btn{width:100%}
+  .preco-hero{order:6;margin-top:20px;display:flex;flex-direction:column}
+  .preco-hero .fmt{order:3;margin:10px 0 0}
+  .preco-hero .val{font-size:44px}
+  .faixa{padding:36px 0 40px}
+  .trilho span,.trilho b{font-size:26px}
+  .trilho{gap:14px}
+  .faixa-ouro{padding:10px 0;transform:rotate(-3deg)}
+
+  .experimente{padding:64px 0 70px}
+  .cab2{margin-bottom:0;gap:0}
+  .titulo{font-size:64px}
+  .abas{flex-direction:row;gap:22px;overflow-x:auto;scrollbar-width:none;margin:26px calc(-1 * var(--lateral)) 22px;padding:0 var(--lateral)}
+  .abas::-webkit-scrollbar{display:none}
+  .abas button{flex:0 0 auto;font-size:22px;padding:12px 0 10px;min-height:44px;white-space:nowrap}
+  .abas button i{font-size:18px}
+  .ver-original{top:10px;left:10px;font-size:13px;padding:7px 10px}
+  .mira.cantos{--c:20px;--e:3px}
+  .pt{width:44px;height:44px}
+  .pt b{width:28px;height:28px;font-size:13px}
+  .pt[aria-pressed="true"] b{width:32px;height:32px}
+  .ficha-obra{display:none}
+  .placa{display:block;margin:-12px 0 0 14px;max-width:none;padding:20px 18px}
+  .placa .linha-rot{margin-top:14px}
+  .placa h3{font-size:32px}
+
+  .dentro{padding:64px 0 60px}
+  .dentro .titulo{font-size:52px}
+  .cab3{gap:18px}
+  .mesa{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    margin:0 calc(-1 * var(--lateral));padding:70px var(--lateral) 84px;gap:0}
+  .mesa::-webkit-scrollbar{display:none}
+  .prova{flex:0 0 58%;margin-left:-6%;scroll-snap-align:start}
+  .prova:first-child{margin-left:0}
+  .prova .num{font-size:42px;top:-46px}
+  .nota{font-size:26px;text-align:left;margin:-50px 0 0 20px;position:relative}
+  .passos{grid-template-columns:1fr;gap:0;margin-top:18px}
+  .passos li{display:grid;grid-template-columns:30px 1fr;padding:14px 0}
+  .passos h3{font-size:24px;margin-bottom:4px;display:contents}
+  .passos h3 i{grid-row:span 2;font-size:30px;line-height:1}
+  .passos p{grid-column:2}
+
+  .acervo{padding:64px 0}
+  .acervo .titulo{font-size:72px}
+  .parede{padding:34px 0 40px}
+  .parede-trilho{gap:22px;--k:.62px;padding-right:22px}
+  .parede-seta{display:none}
+  .quadro figcaption span{font-size:15px}
+  .lista{columns:1}
+  .lista li:nth-child(n+11){display:none}
+  .lista.aberta li{display:grid}
+  .ver-todas{display:block}
+  .lista.aberta + .ver-todas{display:none}
+
+  .duvidas{padding:64px 0}
+  .duvidas .titulo{font-size:64px}
+  .perguntas summary{gap:12px;padding:20px 0;align-items:start}
+  .perguntas summary i{font-size:19px;line-height:1.4}
+  .perguntas summary span{font-size:24px}
+  .perguntas p{padding:0 0 22px 34px;font-size:16px}
+
+  .oferta{display:block;min-height:0}
+  .oferta .fundo{inset:0 auto auto -15%;width:130%;height:660px;object-position:50% 20%}
+  .oferta .veu{bottom:auto;height:662px;background:linear-gradient(180deg,rgba(16,14,11,.8),rgba(16,14,11,.4) 45%,var(--verniz))}
+  .oferta .wrap{grid-template-columns:1fr;gap:40px;padding:64px 0 64px}
+  .oferta h2{font-size:clamp(40px,12.8vw,50px)}
+  .oferta .chamada p{font-size:17px;margin-top:20px}
+  .leilao{padding:28px 24px 24px}
+  .leilao dd{font-size:19px}
+  .leilao .val{font-size:76px}
+  .leilao .btn{font-size:14px;letter-spacing:.08em;padding:18px 10px;text-align:center}
+  .garantia{justify-content:flex-start}
+  .ficha-fundo{display:none}
+
+  .rodape{padding:48px 0 110px}
+  .rodape .fim{flex-direction:column;align-items:flex-start;gap:14px;margin-top:20px}
+  .rodape .lema{font-size:20px}
+
+  .barra{padding:12px 0}
+  .barra .txt{display:none}
+  .barra .val,.barra .par{display:block}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<!-- ======================= 1. HERO ======================= -->
+<header class="topo wrap"><a class="marca" href="#"><em>Re</em>Frame</a></header>
+<section class="wrap hero" id="topo">
+  <div>
+    <p class="rotulo">Acervo Reframe</p>
+    <h1>Toda obra-prima guarda <span class="it">um segredo à vista.</span></h1>
+    <p class="sub">50 pinturas decifradas sem palavras difíceis: a história real por trás de cada tela e os detalhes que quase ninguém percebe, apontados um por&nbsp;um.</p>
+    <div class="acao"><a class="btn js-comprar" href="#oferta">Quero o Acervo Reframe</a></div>
+    <div class="preco-hero">
+      <p class="fmt">E-book em PDF · acesso imediato</p>
+      <p class="val">R$&thinsp;29,90</p>
+      <p class="par">ou 6x de R$&thinsp;5,50</p>
+    </div>
+  </div>
+  <div class="livro"><img src="img/pag-livro3d-891.webp" alt="O livro Acervo Reframe: 50 obras decifradas"></div>
+</section>
+
+<!-- ======================= 2. FAIXA ======================= -->
+<div class="faixa" aria-hidden="true">
+  <div class="faixa-ouro"><div class="trilho" id="trilho"></div></div>
+</div>
+
+<!-- ======================= 3. EXPERIMENTE ======================= -->
+<section class="experimente" id="experimente">
+  <div class="wrap">
+    <div class="cab2">
+      <div>
+        <p class="rotulo">Experimente</p>
+        <h2 class="titulo">Aproxime <span class="it">o olhar.</span></h2>
+      </div>
+      <div class="lado">
+        <p class="apoio">Toque em um número. O livro lê cada pintura desse jeito: um ponto por vez, ampliado, com a explicação do que você está&nbsp;vendo.</p>
+        <div class="abas" role="tablist" aria-label="Obras da demonstração">
+          <button role="tab" data-obra="holbein" aria-selected="true"><i>01</i>Os Embaixadores</button>
+          <button role="tab" data-obra="icaro" aria-selected="false"><i>02</i>A Queda de Ícaro</button>
+          <button role="tab" data-obra="meninas" aria-selected="false"><i>03</i>As Meninas</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="palco">
+      <div>
+        <div class="moldura-fixa">
+          <button class="ver-original" id="verOriginal" type="button">Ver pintura original</button>
+          <div class="tela" id="tela">
+            <img id="obra" src="" alt="">
+            <div class="mira cantos" id="mira"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <p class="ficha-obra" id="fichaObra"></p>
+      </div>
+      <aside class="placa" aria-live="polite">
+        <div class="zoom" id="recorte" role="img" aria-label="Recorte ampliado do detalhe"></div>
+        <div class="linha-rot"><span class="cont" id="cont">Detalhe 1 de 7</span><span class="trecho">trecho do livro</span></div>
+        <div class="corpo" id="corpo"><h3 id="tit"></h3><p id="txt"></p></div>
+        <div class="nav">
+          <button type="button" id="ant" aria-label="Detalhe anterior">&lsaquo;</button>
+          <button type="button" id="prox" aria-label="Próximo detalhe">&rsaquo;</button>
+          <span>ou toque nos números</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 4. POR DENTRO ======================= -->
+<section class="dentro">
+  <div class="wrap">
+    <div class="cab3">
+      <div>
+        <p class="rotulo">Por dentro</p>
+        <h2 class="titulo">Toda obra, <span class="it">o mesmo roteiro.</span></h2>
+      </div>
+      <p class="apoio">Nada de resumo de uma página. Primeiro a história completa por trás da tela, depois cada detalhe um por um, as lendas e a virada. Você fecha o capítulo entendendo cada canto da&nbsp;pintura.</p>
+    </div>
+    <div class="mesa">
+      <div class="prova" style="--r:-3deg;--y:0px"><span class="num">1</span><img src="img/pag-p01-1000.webp" alt="Página de abertura da Mona Lisa"></div>
+      <div class="prova" style="--r:2deg;--y:30px"><span class="num">2</span><img src="img/pag-p03-1000.webp" alt="Mapa com os nove pontos da Mona Lisa"></div>
+      <div class="prova" style="--r:-1.5deg;--y:-10px"><span class="num">3</span><img src="img/pag-p04-1000.webp" alt="Página dos detalhes 1 e 2: o sorriso e o olhar"></div>
+      <div class="prova" style="--r:2.5deg;--y:22px"><span class="num">4</span><img src="img/pag-p13-1000.webp" alt="A virada: o que fez da Mona Lisa a pintura mais famosa"></div>
+    </div>
+    <p class="nota">só a Mona Lisa tem 13 páginas</p>
+    <ol class="passos">
+      <li><h3><i>1</i>A abertura</h3><p>A obra inteira e a pergunta que o capítulo vai&nbsp;responder.</p></li>
+      <li><h3><i>2</i>O mapa</h3><p>Os pontos numerados sobre a pintura, para você saber onde&nbsp;olhar.</p></li>
+      <li><h3><i>3</i>Os detalhes</h3><p>De perto, um por um, com o que cada um quer&nbsp;dizer.</p></li>
+      <li><h3><i>4</i>A virada</h3><p>A resposta que muda o que você via na pintura&nbsp;inteira.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= 5. ACERVO ======================= -->
+<section class="acervo">
+  <div class="wrap cab4">
+    <div>
+      <p class="rotulo">O acervo</p>
+      <h2 class="titulo">As <span class="it">50</span> obras.</h2>
+    </div>
+    <p class="apoio">De Leonardo a Van Gogh, de Bosch a Hokusai. Cinco séculos de pintura, todas com alguma coisa à vista que quase ninguém&nbsp;nota.</p>
+  </div>
+  <div class="parede-box">
+    <div class="parede" id="parede" aria-label="As 50 obras do livro, passando devagar. Arraste para ver.">
+      <div class="parede-trilho" id="paredeTrilho">
+<!--PAREDE-->
+        <figure class="quadro" style="--h:270;--a:0.669"><div class="moldura"><img src="img/parede-01-281.webp" alt="Mona Lisa" loading="lazy" draggable="false" style="--h:270"></div><figcaption><b>Nº 01</b><span>Mona Lisa</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.014"><div class="moldura"><img src="img/parede-02-426.webp" alt="Os Embaixadores" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 02</b><span>Os Embaixadores</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.869"><div class="moldura"><img src="img/parede-03-365.webp" alt="As Meninas" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 03</b><span>As Meninas</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.564"><div class="moldura"><img src="img/parede-04-657.webp" alt="Paisagem com a Queda de Ícaro" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 04</b><span>Paisagem com a Queda de Ícaro</span></figcaption></figure>
+        <figure class="quadro" style="--h:270;--a:0.731"><div class="moldura"><img src="img/parede-05-307.webp" alt="O Casal Arnolfini" loading="lazy" draggable="false" style="--h:270"></div><figcaption><b>Nº 05</b><span>O Casal Arnolfini</span></figcaption></figure>
+        <figure class="quadro" style="--h:270;--a:0.545"><div class="moldura"><img src="img/parede-06-229.webp" alt="Saturno Devorando um Filho" loading="lazy" draggable="false" style="--h:270"></div><figcaption><b>Nº 06</b><span>Saturno Devorando um Filho</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:1.774"><div class="moldura"><img src="img/parede-07-745.webp" alt="O Jardim das Delícias Terrenas" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 07</b><span>O Jardim das Delícias Terrenas</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.262"><div class="moldura"><img src="img/parede-08-530.webp" alt="A Noite Estrelada" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 08</b><span>A Noite Estrelada</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:2.148"><div class="moldura"><img src="img/parede-09-902.webp" alt="A Criação de Adão" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 09</b><span>A Criação de Adão</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:1.919"><div class="moldura"><img src="img/parede-10-806.webp" alt="A Última Ceia" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 10</b><span>A Última Ceia</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.348"><div class="moldura"><img src="img/parede-11-566.webp" alt="Stańczyk" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 11</b><span>Stańczyk</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.464"><div class="moldura"><img src="img/parede-12-615.webp" alt="O Anjo Caído" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 12</b><span>O Anjo Caído</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.786"><div class="moldura"><img src="img/parede-13-330.webp" alt="Judite Decapitando Holofernes" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 13</b><span>Judite Decapitando Holofernes</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.807"><div class="moldura"><img src="img/parede-14-339.webp" alt="Davi com a Cabeça de Golias" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 14</b><span>Davi com a Cabeça de Golias</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:1.879"><div class="moldura"><img src="img/parede-15-789.webp" alt="A Ilha dos Mortos" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 15</b><span>A Ilha dos Mortos</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.233"><div class="moldura"><img src="img/parede-16-518.webp" alt="O Pesadelo" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 16</b><span>O Pesadelo</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.776"><div class="moldura"><img src="img/parede-17-326.webp" alt="A Morte de Marat" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 17</b><span>A Morte de Marat</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.467"><div class="moldura"><img src="img/parede-18-616.webp" alt="A Jangada da Medusa" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 18</b><span>A Jangada da Medusa</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.781"><div class="moldura"><img src="img/parede-19-328.webp" alt="Viajante sobre o Mar de Névoa" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 19</b><span>Viajante sobre o Mar de Névoa</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.229"><div class="moldura"><img src="img/parede-20-516.webp" alt="A Ronda Noturna" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 20</b><span>A Ronda Noturna</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.855"><div class="moldura"><img src="img/parede-21-359.webp" alt="Moça com Brinco de Pérola" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 21</b><span>Moça com Brinco de Pérola</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.786"><div class="moldura"><img src="img/parede-22-330.webp" alt="O Grito" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 22</b><span>O Grito</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:1.871"><div class="moldura"><img src="img/parede-23-786.webp" alt="Ofélia" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 23</b><span>Ofélia</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:0.998"><div class="moldura"><img src="img/parede-24-419.webp" alt="O Beijo" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 24</b><span>O Beijo</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.402"><div class="moldura"><img src="img/parede-25-589.webp" alt="O Triunfo da Morte" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 25</b><span>O Triunfo da Morte</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.243"><div class="moldura"><img src="img/parede-26-522.webp" alt="O Anjo Ferido" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 26</b><span>O Anjo Ferido</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.248"><div class="moldura"><img src="img/parede-27-524.webp" alt="Os Jogadores de Xadrez" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 27</b><span>Os Jogadores de Xadrez</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.440"><div class="moldura"><img src="img/parede-28-605.webp" alt="A Morte e a Menina" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 28</b><span>A Morte e a Menina</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.198"><div class="moldura"><img src="img/parede-29-503.webp" alt="A Execução de Lady Jane Grey" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 29</b><span>A Execução de Lady Jane Grey</span></figcaption></figure>
+        <figure class="quadro" style="--h:270;--a:0.726"><div class="moldura"><img src="img/parede-30-305.webp" alt="God Speed" loading="lazy" draggable="false" style="--h:270"></div><figcaption><b>Nº 30</b><span>God Speed</span></figcaption></figure>
+        <figure class="quadro" style="--h:270;--a:0.702"><div class="moldura"><img src="img/parede-31-295.webp" alt="A Investidura" loading="lazy" draggable="false" style="--h:270"></div><figcaption><b>Nº 31</b><span>A Investidura</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.593"><div class="moldura"><img src="img/parede-32-669.webp" alt="O Nascimento de Vênus" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 32</b><span>O Nascimento de Vênus</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.505"><div class="moldura"><img src="img/parede-33-632.webp" alt="A Primavera" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 33</b><span>A Primavera</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.288"><div class="moldura"><img src="img/parede-34-541.webp" alt="A Escola de Atenas" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 34</b><span>A Escola de Atenas</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.069"><div class="moldura"><img src="img/parede-35-449.webp" alt="A Vocação de São Mateus" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 35</b><span>A Vocação de São Mateus</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:0.976"><div class="moldura"><img src="img/parede-36-410.webp" alt="Medusa" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 36</b><span>Medusa</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.245"><div class="moldura"><img src="img/parede-37-523.webp" alt="A Liberdade Guiando o Povo" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 37</b><span>A Liberdade Guiando o Povo</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.298"><div class="moldura"><img src="img/parede-38-545.webp" alt="O Três de Maio de 1808" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 38</b><span>O Três de Maio de 1808</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:3.158"><div class="moldura"><img src="img/parede-39-960.webp" alt="O Aquelarre" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 39</b><span>O Aquelarre</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:1.724"><div class="moldura"><img src="img/parede-40-724.webp" alt="A Tentação de Santo Antão" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 40</b><span>A Tentação de Santo Antão</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.274"><div class="moldura"><img src="img/parede-41-535.webp" alt="Ivan, o Terrível, e Seu Filho" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 41</b><span>Ivan, o Terrível, e Seu Filho</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.488"><div class="moldura"><img src="img/parede-42-625.webp" alt="A Grande Onda de Kanagawa" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 42</b><span>A Grande Onda de Kanagawa</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.064"><div class="moldura"><img src="img/parede-43-447.webp" alt="O Cambista e Sua Mulher" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 43</b><span>O Cambista e Sua Mulher</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.786"><div class="moldura"><img src="img/parede-44-330.webp" alt="Melencolia I" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 44</b><span>Melencolia I</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.521"><div class="moldura"><img src="img/parede-45-639.webp" alt="A Morte de Sócrates" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 45</b><span>A Morte de Sócrates</span></figcaption></figure>
+        <figure class="quadro" style="--h:200;--a:1.298"><div class="moldura"><img src="img/parede-46-545.webp" alt="O Juramento dos Horácios" loading="lazy" draggable="false" style="--h:200"></div><figcaption><b>Nº 46</b><span>O Juramento dos Horácios</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.852"><div class="moldura"><img src="img/parede-47-358.webp" alt="Lady Lilith" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 47</b><span>Lady Lilith</span></figcaption></figure>
+        <figure class="quadro" style="--h:165;--a:1.302"><div class="moldura"><img src="img/parede-48-547.webp" alt="A Dama de Shalott" loading="lazy" draggable="false" style="--h:165"></div><figcaption><b>Nº 48</b><span>A Dama de Shalott</span></figcaption></figure>
+        <figure class="quadro" style="--h:240;--a:0.824"><div class="moldura"><img src="img/parede-49-346.webp" alt="Autorretrato com a Orelha Enfaixada" loading="lazy" draggable="false" style="--h:240"></div><figcaption><b>Nº 49</b><span>Autorretrato com a Orelha Enfaixada</span></figcaption></figure>
+        <figure class="quadro" style="--h:140;--a:2.088"><div class="moldura"><img src="img/parede-50-877.webp" alt="Campo de Trigo com Corvos" loading="lazy" draggable="false" style="--h:140"></div><figcaption><b>Nº 50</b><span>Campo de Trigo com Corvos</span></figcaption></figure>
+<!--/PAREDE-->
+      </div>
+    </div>
+    <button class="parede-seta ant" type="button" aria-label="Obras anteriores">&lsaquo;</button>
+    <button class="parede-seta prox" type="button" aria-label="Próximas obras">&rsaquo;</button>
+  </div>
+  <div class="wrap">
+    <ol class="lista" id="lista"></ol>
+    <button class="ver-todas" id="verTodas" type="button">Ver as 50 obras &nbsp;+</button>
+  </div>
+</section>
+
+<!-- ======================= 6. DUVIDAS ======================= -->
+<section class="duvidas">
+  <div class="wrap">
+    <div>
+      <p class="rotulo">Dúvidas</p>
+      <h2 class="titulo">Antes de <span class="it">comprar.</span></h2>
+    </div>
+    <div class="perguntas">
+      <details open><summary><i>01</i><span>Preciso entender de arte?</span></summary>
+        <p>Não. Foi escrito para quem nunca abriu um livro de história da arte. Quando aparece um termo técnico, ele vem explicado na mesma&nbsp;frase.</p></details>
+      <details><summary><i>02</i><span>Como recebo o e-book?</span></summary>
+        <p>Assim que o pagamento é aprovado, o link do PDF chega no seu&nbsp;e-mail.</p></details>
+      <details><summary><i>03</i><span>Consigo ler no celular?</span></summary>
+        <p>Consegue. É um PDF: abre no celular, no tablet e no&nbsp;computador.</p></details>
+      <details><summary><i>04</i><span>Dá para confiar no que está escrito?</span></summary>
+        <p>Cada capítulo traz as fontes no fim, de museus, catálogos e estudos sobre o artista. E cada afirmação vem carimbada: fato, leitura, lenda ou ninguém&nbsp;sabe.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 7. OFERTA ======================= -->
+<section class="oferta" id="oferta">
+  <img class="fundo" src="img/orig-friedrich-1800.webp" alt="">
+  <div class="veu"></div>
+  <div class="wrap">
+    <div class="chamada">
+      <h2>Depois deste livro, nenhuma pintura <span class="it">parece a mesma.</span></h2>
+      <p>50 obras em mais de 400 páginas, cada uma com a história, o mapa, os detalhes e a virada. Você paga uma vez e o PDF é seu para&nbsp;sempre.</p>
+    </div>
+    <div class="leilao" id="ficha">
+      <p class="rot">Lote único · Acervo Reframe</p>
+      <dl>
+        <div><dt>Obras</dt><dd>50</dd></div>
+        <div><dt>Formato</dt><dd>E-book em PDF</dd></div>
+        <div><dt>Entrega</dt><dd>Imediata, por e-mail</dd></div>
+        <div><dt>Garantia</dt><dd>7 dias</dd></div>
+      </dl>
+      <p class="pg">Pagamento único</p>
+      <p class="val">R$&thinsp;29,90</p>
+      <p class="par">à vista ou 6x de R$&thinsp;5,50 · acesso imediato ao PDF</p>
+      <a class="btn escuro js-comprar" href="#oferta">Quero o Acervo Reframe</a>
+      <p class="garantia"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C5B12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Garantia de 7 dias: se não gostar, devolvemos&nbsp;tudo.</p>
+    </div>
+  </div>
+  <p class="ficha-fundo">Caspar David Friedrich · Viajante sobre o Mar de Névoa · c. 1818 · Nº 19</p>
+</section>
+
+<!-- ======================= 8. RODAPE ======================= -->
+<footer class="rodape">
+  <div class="wrap">
+    <a class="marca" href="#topo"><em>Re</em>Frame</a>
+    <div class="fim">
+      <p class="lema">Todo dia, uma obra que esconde uma história.</p>
+      <small>Imagens das obras em domínio público.</small>
+    </div>
+  </div>
+</footer>
+
+<div class="barra" id="barra">
+  <div class="wrap">
+    <span class="txt">50 obras decifradas · R$ 29,90 · 7 dias de garantia</span>
+    <span><span class="val">R$&thinsp;29,90</span><span class="par">ou 6x de R$&thinsp;5,50</span></span>
+    <a class="btn js-comprar" href="#oferta">Quero o acervo</a>
+  </div>
+</div>
+
+
+<script>
+/* ===== CHECKOUT: colar o link aqui. Vazio = os botoes levam a #oferta ===== */
+var CHECKOUT='';
+if(CHECKOUT){document.querySelectorAll('.js-comprar').forEach(function(a){a.href=CHECKOUT})}
+
+/* ---------- faixa: nomes repetidos duas vezes pro laco nao ter emenda ---------- */
+(function(){
+  var n=['Mona Lisa','Os Embaixadores','As Meninas','A Queda de Ícaro','O Casal Arnolfini','Saturno','A Noite Estrelada','A Grande Onda','O Grito','A Ronda Noturna','O Beijo','A Última Ceia'];
+  var h='';for(var k=0;k<2;k++)n.forEach(function(x){h+='<span>'+x+'</span><b>·</b>'});
+  document.getElementById('trilho').innerHTML=h;
+})();
+
+/* ---------- acervo: as 50 ---------- */
+(function(){
+  var O=['Mona Lisa|Leonardo da Vinci','Os Embaixadores|Hans Holbein, o Jovem','As Meninas|Diego Velázquez','Paisagem com a Queda de Ícaro|Pieter Bruegel, o Velho','O Casal Arnolfini|Jan van Eyck','Saturno Devorando um Filho|Francisco de Goya','O Jardim das Delícias Terrenas|Hieronymus Bosch','A Noite Estrelada|Vincent van Gogh','A Criação de Adão|Michelangelo','A Última Ceia|Leonardo da Vinci','Stańczyk|Jan Matejko','O Anjo Caído|Alexandre Cabanel','Judite Decapitando Holofernes|Artemisia Gentileschi','Davi com a Cabeça de Golias|Caravaggio','A Ilha dos Mortos|Arnold Böcklin','O Pesadelo|Henry Fuseli','A Morte de Marat|Jacques-Louis David','A Jangada da Medusa|Théodore Géricault','Viajante sobre o Mar de Névoa|Caspar David Friedrich','A Ronda Noturna|Rembrandt','Moça com Brinco de Pérola|Johannes Vermeer','O Grito|Edvard Munch','Ofélia|John Everett Millais','O Beijo|Gustav Klimt','O Triunfo da Morte|Pieter Bruegel, o Velho','O Anjo Ferido|Hugo Simberg','Os Jogadores de Xadrez|Moritz Retzsch','A Morte e a Menina|Frans Van Kuyck','A Execução de Lady Jane Grey|Paul Delaroche','God Speed|Edmund Blair Leighton','A Investidura|Edmund Blair Leighton','O Nascimento de Vênus|Sandro Botticelli','A Primavera|Sandro Botticelli','A Escola de Atenas|Rafael Sanzio','A Vocação de São Mateus|Caravaggio','Medusa|Caravaggio','A Liberdade Guiando o Povo|Eugène Delacroix','O Três de Maio de 1808|Francisco de Goya','O Aquelarre|Francisco de Goya','A Tentação de Santo Antão|Hieronymus Bosch','Ivan, o Terrível, e Seu Filho|Ilya Répin','A Grande Onda de Kanagawa|Katsushika Hokusai','O Cambista e Sua Mulher|Quentin Metsys','Melencolia I|Albrecht Dürer','A Morte de Sócrates|Jacques-Louis David','O Juramento dos Horácios|Jacques-Louis David','Lady Lilith|Dante Gabriel Rossetti','A Dama de Shalott|John William Waterhouse','Autorretrato com a Orelha Enfaixada|Vincent van Gogh','Campo de Trigo com Corvos|Vincent van Gogh'];
+  var l=document.getElementById('lista');
+  l.innerHTML=O.map(function(s){var p=s.split('|');return '<li><span class="o">'+p[0]+'</span><span class="a">'+p[1]+'</span></li>'}).join('');
+  document.getElementById('verTodas').addEventListener('click',function(){l.classList.add('aberta')});
+})();
+
+/* ---------- parede: as 50 sempre andando, fluido ----------
+   Movimento por transform (GPU, fracao de pixel), nao por scroll (que anda em
+   pixel inteiro e treme). Fisica simples: a velocidade v sempre volta suave
+   para a velocidade-base. Seta = empurrao que desliza e desacelera; arrastar =
+   segue o dedo/mouse e, ao soltar, continua com o embalo do gesto. Nunca para. */
+(function(){
+  var box=document.getElementById('parede'),trilho=document.getElementById('paredeTrilho');if(!box)return;
+  [].slice.call(trilho.children).forEach(function(f){var c=f.cloneNode(true);c.setAttribute('aria-hidden','true');trilho.appendChild(c)});
+  var reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var base=(innerWidth<700?30:45)*(reduz?.5:1);
+  var x=0,v=base,lento=false,arr=null,ultimo=0,L=0;
+  function medir(){L=trilho.scrollWidth/2}
+  medir();addEventListener('resize',medir);addEventListener('load',medir);
+  function quadro(t){
+    var dt=ultimo?Math.min(.05,(t-ultimo)/1000):0;ultimo=t;
+    if(!arr){
+      var alvo=base*(lento?.3:1);
+      v+=(alvo-v)*(1-Math.exp(-dt*2.2));   /* volta suave pra velocidade-base */
+      x+=v*dt;
+    }
+    if(L>0){x%=L;if(x<0)x+=L}
+    trilho.style.transform='translate3d('+(-x).toFixed(2)+'px,0,0)';
+    requestAnimationFrame(quadro);
+  }
+  box.addEventListener('mouseenter',function(){lento=true});
+  box.addEventListener('mouseleave',function(){lento=false});
+  /* arrastar (mouse e dedo); arrasto vertical no celular continua rolando a pagina (touch-action:pan-y) */
+  box.addEventListener('pointerdown',function(e){
+    if(e.button>0||e.target.closest('.parede-seta'))return;
+    arr={px:e.clientX,py:e.clientY,x0:x,lx:e.clientX,lt:performance.now(),vel:0,horiz:e.pointerType==='mouse'};
+    if(arr.horiz){box.classList.add('arrastando');try{box.setPointerCapture(e.pointerId)}catch(_){}}
+  });
+  box.addEventListener('pointermove',function(e){
+    if(!arr)return;
+    if(!arr.horiz){ /* dedo: decide se o gesto e horizontal */
+      if(Math.abs(e.clientX-arr.px)>8&&Math.abs(e.clientX-arr.px)>Math.abs(e.clientY-arr.py)){arr.horiz=true;try{box.setPointerCapture(e.pointerId)}catch(_){}}
+      else if(Math.abs(e.clientY-arr.py)>8){arr=null;return}
+      else return;
+    }
+    var now=performance.now(),dtm=Math.max(1,now-arr.lt);
+    arr.vel=arr.vel*.6+(-(e.clientX-arr.lx)/dtm*1000)*.4;   /* velocidade do gesto, suavizada */
+    arr.lx=e.clientX;arr.lt=now;
+    x=arr.x0-(e.clientX-arr.px);
+  });
+  function solta(){if(!arr)return;
+    if(arr.horiz)v=Math.max(-2500,Math.min(2500,performance.now()-arr.lt>120?0:arr.vel));  /* embalo do gesto */
+    arr=null;box.classList.remove('arrastando')}
+  ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){box.addEventListener(ev,solta)});
+  addEventListener('pointerup',solta);addEventListener('blur',solta);
+  box.addEventListener('dragstart',function(e){e.preventDefault()});
+  /* roda do mouse / trackpad na horizontal */
+  box.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();v+=e.deltaX*6}},{passive:false});
+  /* setas: empurrao que desliza ~60% da tela e volta suave pro ritmo */
+  document.querySelectorAll('.parede-seta').forEach(function(b){b.addEventListener('click',function(){
+    var dir=b.classList.contains('prox')?1:-1;v=dir*box.clientWidth*.6*2.2+base;})});
+  requestAnimationFrame(quadro);
+})();
+
+/* ---------- demonstracao interativa ----------
+   x e y: porcentagem da largura e da altura da imagem (conferidos numa grade
+   de 10% sobre cada obra). z: quanto o recorte amplia (padrao 2,6). O cranio
+   usa 1,95 para caber inteiro no recorte (regra G51).
+   As cantoneiras sobre a pintura marcam exatamente a area do recorte. */
+var OBRAS={
+ holbein:{ar:1.0148,arquivo:'img/orig-holbein-1800.webp',alt:'Os Embaixadores, de Hans Holbein, o Jovem',ficha:'Os Embaixadores · Hans Holbein, o Jovem · 1533',
+  pontos:[
+   {x:52,y:84,z:1.95,t:'O crânio distorcido',d:'No chão, entre os dois homens mais ricos e cultos da cena, há um borrão estranho. Visto de frente, parece um osso sem forma. Visto da lateral direita, vira um crânio humano perfeito: a morte já está na sala com eles.'},
+   {x:70,y:57,t:'O alaúde com a corda arrebentada',d:'O instrumento está perfeito, caro, afinado. Só que uma corda estourou. No vocabulário da época, corda arrebentada é discórdia: a Europa rachando entre católicos e protestantes bem ali, no ano em que Henrique VIII rompeu com Roma.'},
+   {x:58,y:67,t:'O livro de hinos luterano',d:'O livro aberto na prateleira de baixo não é decoração. É um hinário de Lutero, aberto numa página específica. Num retrato encomendado por um embaixador católico, isso é uma declaração sobre o lado em que a conversa estava.'},
+   {x:44,y:58,t:'O globo terrestre',d:'O globo mostra o mundo recém-expandido pelas navegações, com Polisy, a terra do embaixador da esquerda, marcada na França. É o retrato de um mundo que acabou de dobrar de tamanho e que esses dois homens achavam que entendiam.'},
+   {x:43,y:25,t:'O globo celeste',d:'Na prateleira de cima, o céu. Em 1533, mapear as estrelas era o auge do conhecimento humano. Holbein empilhou o saber do mundo em duas prateleiras para depois atravessar tudo com o crânio lá embaixo.'},
+   {x:56,y:27,t:'Os instrumentos de medir o tempo',d:'Quadrantes, relógios de sol, um torquetum. Todos marcam a mesma hora de um mesmo dia de abril. O quadro inteiro é um instrumento de precisão apontado para um instante que já passou.'},
+   {x:14,y:91,t:'O piso de Westminster',d:'O mosaico é o piso real da Abadia de Westminster, onde os reis da Inglaterra são coroados. Holbein colocou os dois embaixadores em pé exatamente sobre o chão do poder que eles estavam ali para negociar.'}
+  ]},
+ icaro:{ar:1.5649,arquivo:'img/orig-icaro-1800.webp',alt:'Paisagem com a Queda de Ícaro, atribuída a Pieter Bruegel, o Velho',ficha:'Paisagem com a Queda de Ícaro · atribuída a Pieter Bruegel · c. 1560',
+  pontos:[
+   {x:87,y:92,t:'As pernas de Ícaro',d:'O título anuncia a queda de Ícaro. O que a pintura mostra dele são duas pernas afundando no canto inferior direito, junto de um respingo branco. Ocupam menos de um centésimo da tela. A tragédia que dá nome ao quadro é o menor objeto dele.'},
+   {x:42,y:65,t:'O lavrador de costas',d:'O homem maior da cena está de costas para o mar, empurrando o arado. Não viu, não ouviu, não vai saber. Bruegel colocou no centro do quadro o trabalho que continua, e empurrou o mito para a margem.'},
+   {x:52,y:55,t:'O pastor que olha para cima',d:'Ele é o único que olha para o céu. Só que olha para o lado errado: Ícaro já caiu, e está atrás dele. É a piada mais cruel da pintura, e a mais silenciosa.'},
+   {x:76,y:55,t:'O navio que segue viagem',d:'A tripulação tinha a melhor vista do acontecimento. As velas continuam abertas, a proa continua apontada para fora. Ninguém vira o leme.'},
+   {x:65,y:24,t:'O sol baixo no horizonte',d:'O mito diz que Ícaro derreteu as asas chegando perto do sol. Aqui o sol está longe, no fim do mar, se pondo. A causa da morte foi pintada do outro lado da tela, pequena e indiferente.'},
+   {x:76,y:85,t:'O pescador na beira',d:'Sentado de costas, concentrado na linha. Está a poucos metros do corpo que afunda. Bruegel repete o mesmo gesto três vezes, com o lavrador, o pastor e o pescador: cada um ocupado com a própria vida.'}
+  ]},
+ meninas:{ar:0.8688,arquivo:'img/orig-meninas-1800.webp',alt:'As Meninas, de Diego Velázquez',ficha:'As Meninas · Diego Velázquez · 1656',
+  pontos:[
+   {x:41,y:57,t:'O espelho com o rei e a rainha',d:'No fundo, um retângulo claro com duas figuras. Não é um quadro na parede: é um espelho, e quem está refletido são Filipe IV e Mariana. Ou seja, o casal real está onde você está agora. Você ocupa o lugar deles para olhar a cena.'},
+   {x:23,y:59,t:'Velázquez e a cruz de Santiago',d:'O pintor se colocou dentro da própria obra, de pincel na mão. No peito, a cruz vermelha da Ordem de Santiago, que ele só receberia três anos depois de terminar o quadro. Foi acrescentada depois, e conta-se que pela mão do próprio rei.'},
+   {x:9,y:50,t:'A tela que você não vê',d:'A maior coisa da sala é uma tela gigante de costas. Nunca saberemos o que ele está pintando ali. Velázquez construiu o quadro inteiro em volta de uma informação que ele decidiu não dar.'},
+   {x:46,y:73,t:'A infanta Margarida',d:'Ela é o centro de luz e a única que parece posar. Tem cinco anos e já sabe exatamente para onde olhar. Tudo na composição empurra o olho para ela, e mesmo assim ela não é o assunto.'},
+   {x:58,y:57,t:'O homem na porta',d:'No fundo, uma silhueta parada numa escada iluminada, com a mão na cortina. É José Nieto, o camareiro. Ele está entrando ou saindo? Velázquez deixou a dúvida de propósito, e ela é o único movimento da cena.'},
+   {x:70,y:91,t:'O cão e o pé do anão',d:'O mastim no canto não reage a nada. Em cima dele, o pé de Nicolasito Pertusato, que escolheu justo este instante para cutucar o animal. A única pessoa que se mexe na sala real é a que tem menos poder nela.'},
+   {x:33,y:73,t:'O búcaro oferecido',d:'A menina de joelhos estende uma bandeja com um pequeno vaso de barro vermelho. As damas da corte mastigavam esse barro, acreditando que clareava a pele. Um detalhe de dez centímetros guarda a rotina inteira do palácio.'}
+  ]}
+};
+
+var tela=document.getElementById('tela'),img=document.getElementById('obra'),mira=document.getElementById('mira'),
+    recorte=document.getElementById('recorte'),cont=document.getElementById('cont'),tit=document.getElementById('tit'),
+    txt=document.getElementById('txt'),fichaObra=document.getElementById('fichaObra'),atual='holbein',idx=0;
+
+function desenhar(chave,i){
+  var o=OBRAS[chave];atual=chave;idx=i;
+  if(img.getAttribute('src')!==o.arquivo){img.src=o.arquivo;img.alt=o.alt;recorte.style.backgroundImage='url('+o.arquivo+')'}
+  fichaObra.textContent=o.ficha;
+  tela.style.setProperty('--ar',o.ar);
+  tela.querySelectorAll('.pt').forEach(function(n){n.remove()});
+  o.pontos.forEach(function(p,k){
+    var b=document.createElement('button');b.className='pt';b.type='button';
+    b.style.left=p.x+'%';b.style.top=p.y+'%';
+    b.innerHTML='<b>'+(k+1)+'</b>'+(k!==i?'<span class="halo"></span>':'');
+    b.setAttribute('aria-pressed',k===i?'true':'false');
+    b.setAttribute('aria-label','Detalhe '+(k+1)+': '+p.t);
+    b.addEventListener('click',function(){desenhar(chave,k)});
+    tela.appendChild(b);
+  });
+  var p=o.pontos[i];
+  cont.textContent='Detalhe '+(i+1)+' de '+o.pontos.length;
+  tit.textContent=p.t;txt.textContent=p.d;
+  posicionar();
+}
+
+/* recorte CENTRADO no ponto, em pixel, com trava pra nao sobrar fundo.
+ */
+function posicionar(){
+  var p=OBRAS[atual].pontos[idx];
+  if(!p||!img.naturalWidth)return;
+  var zw=recorte.clientWidth,zh=recorte.clientHeight;if(!zw||!zh)return;
+  var bw=zw*(p.z||2.6),bh=bw*img.naturalHeight/img.naturalWidth;
+  if(bh<zh){bh=zh;bw=bh*img.naturalWidth/img.naturalHeight}
+  var l=zw/2-p.x/100*bw,t=zh/2-p.y/100*bh;
+  l=Math.min(0,Math.max(zw-bw,l));t=Math.min(0,Math.max(zh-bh,t));
+  recorte.style.backgroundSize=bw+'px '+bh+'px';
+  recorte.style.backgroundPosition=Math.round(l)+'px '+Math.round(t)+'px';
+  mira.style.left=(-l/bw*100)+'%';mira.style.top=(-t/bh*100)+'%';
+  mira.style.width=(zw/bw*100)+'%';mira.style.height=(zh/bh*100)+'%';
+}
+/* a placa trava na altura do MAIOR texto de todas as obras, medida na largura atual,
+   pra nao pular de tamanho quando troca de ponto ou de obra */
+var corpo=document.getElementById('corpo');
+function travarAltura(){
+  var ta=tit.textContent,tx=txt.textContent,max=0;
+  corpo.style.setProperty('--corpo','auto');
+  Object.keys(OBRAS).forEach(function(k){OBRAS[k].pontos.forEach(function(p){
+    tit.textContent=p.t;txt.textContent=p.d;max=Math.max(max,corpo.offsetHeight)})});
+  tit.textContent=ta;txt.textContent=tx;
+  corpo.style.setProperty('--corpo',Math.ceil(max)+'px');
+}
+var tmr;addEventListener('resize',function(){clearTimeout(tmr);tmr=setTimeout(function(){travarAltura();posicionar()},120)});
+img.addEventListener('load',posicionar);
+
+document.querySelectorAll('.abas button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.abas button').forEach(function(o){o.setAttribute('aria-selected','false')});
+    b.setAttribute('aria-selected','true');
+    tela.classList.remove('limpa');document.getElementById('verOriginal').textContent='Ver pintura original';
+    desenhar(b.dataset.obra,0);
+  });
+});
+document.getElementById('ant').addEventListener('click',function(){var n=OBRAS[atual].pontos.length;desenhar(atual,(idx-1+n)%n)});
+document.getElementById('prox').addEventListener('click',function(){desenhar(atual,(idx+1)%OBRAS[atual].pontos.length)});
+document.getElementById('verOriginal').addEventListener('click',function(){
+  var limpa=tela.classList.toggle('limpa');this.textContent=limpa?'Mostrar os pontos':'Ver pintura original';
+});
+desenhar('holbein',0);
+travarAltura();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(travarAltura);
+
+
+/* ---------- progresso e barra fixa (some quando a ficha da oferta aparece) ---------- */
+(function(){
+  var prog=document.getElementById('prog'),barra=document.getElementById('barra'),
+      hero=document.getElementById('topo'),ficha=document.getElementById('ficha'),fichaVisivel=false;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){fichaVisivel=e[0].isIntersecting;atualiza()},{threshold:.15}).observe(ficha);
+  }
+  function atualiza(){
+    var h=document.documentElement,y=h.scrollTop,t=h.scrollHeight-h.clientHeight;
+    prog.style.width=(t>0?y/t*100:0)+'%';
+    barra.classList.toggle('ver',y>hero.offsetTop+hero.offsetHeight&&!fichaVisivel);
+  }
+  addEventListener('scroll',atualiza,{passive:true});atualiza();
+})();
+</script>
+</body>
+</html>
